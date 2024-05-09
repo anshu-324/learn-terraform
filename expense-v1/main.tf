@@ -1,5 +1,5 @@
 resource "aws_instance" "frontend" {
-  ami           = "ami-0f3c7d07486cad139"
+  ami           = data.aws_ami.ami.image_id
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-0198935c644f120f6"]
   tags = {
@@ -15,7 +15,7 @@ resource "aws_route53_record" "frontend" {
 }
 
 resource "aws_instance" "backend" {
-  ami           = "ami-0f3c7d07486cad139"
+  ami           = data.aws_ami.ami.image_id
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-0198935c644f120f6"]
   tags = {
@@ -31,7 +31,7 @@ resource "aws_route53_record" "backend" {
 }
 
 resource "aws_instance" "mysql" {
-  ami           = "ami-0f3c7d07486cad139"
+  ami           = data.aws_ami.ami.image_id
   instance_type = "t3.micro"
   vpc_security_group_ids = ["sg-0198935c644f120f6"]
   tags = {
