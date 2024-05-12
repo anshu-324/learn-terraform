@@ -4,3 +4,7 @@ resource "null_resource" "null" {
     command = "echo Index No - ${count.index}"
   }
 }
+
+
+
+
